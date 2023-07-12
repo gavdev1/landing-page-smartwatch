@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: #e5e5e5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600
+}
+
+p {
+  line-height: 1.5
+}
+
+a {
+  color: #000;
+  text-decoration: none
+}
+
+img {
+  max-width: 100%
+}
+
+main {
+  margin-top: 5em
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding-inline: 1em
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  position: relative
+}
+
+.nav__logo {
+  width: 100px
+}
+
+.nav__menu {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  position: absolute;
+  row-gap: 2em;
+  padding: 1em;
+  top: -1000%;
+  width: 92%;
+  transition: 1s top;
+  margin: 0 auto;
+}
+
+.menu-visible {
+  top: 4em;
+}
+
+@media (min-width:768px) {
+  .nav__menu {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto
+  }
+}
+
+.nav__menu-element {
+  color: #fff;
+  transition: color .6s
+}
+
+@media (min-width:768px) {
+  .nav__menu-element {
+    color: #000
+  }
+}
+
+.nav__menu-element:hover {
+  color: #ef9d97
+}
+
+.nav__icon {
+  align-items: center;
+  display: flex;
+  gap: 1em
+}
+
+.nav__icon-btn {
+  background-color: #ef9d97;
+  border-radius: 5px;
+  color: #fff;
+  padding: .5em 2em;
+  transition: background-color .6s
+}
+
+.nav__icon-btn:hover {
+  background-color: #d78d88
+}
+
+@media (min-width:768px) {
+  .nav__icon-menu {
+    display: none
+  }
+
+  .smartwatch {
+    align-items: center;
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+.smartwatch{
+  display: grid;
+}
+
+
+.smartwatch__texts{
+  order: 1
+}
+
+@media (max-width:768px) {
+  .smartwatch__texts {
+    width: 90%
+  }
+}
+
+@media (min-width:768px) {
+  .smartwatch__texts {
+    order: -1;
+  }
+}
+
+.smartwatch__texts-title {
+  font-size: 5em
+}
+
+@media (max-width:768px) {
+  .smartwatch__texts-title {
+    font-size: 3em
+  }
+}
+
+.smartwatch__texts-subtitle {
+  color: #ef9d97;
+  letter-spacing: 9px;
+  text-transform: uppercase
+}
+
+.smartwatch__texts-text {
+  color: #777;
+  margin-block: 2em
+}
+
+.smartwatch__cards {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+  align-items: center;
+}
+
+.smartwatch__card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  margin-bottom: 2em;
+  padding: 1em 4em;
+  text-align: center;
+  
+}
+
+.smartwatch__card-subtitle {
+  color: #ef9d97;
+  letter-spacing: 3px
+}

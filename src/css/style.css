@@ -1,0 +1,176 @@
+$font: 'Poppins', sans-serif;
+$weight: 600;
+$dark: #000;
+$white: #fff;
+$primary: #ef9d97;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5ee5e5;
+}
+
+h1,h2,h3,h4{
+    font-weight: 600;
+}
+
+p{
+    line-height: 1.5;
+}
+
+a{
+    color: $dark;
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+main{
+    margin-top: 5em;
+}
+
+.container{
+    max-width: 1100px;
+    padding-inline: 1em;
+    margin: 0 auto;
+}
+
+.nav {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &__logo{
+        width: 100px;
+    }
+
+    &__menu{
+        flex-direction: column;
+        row-gap: 2em;
+        gap: 1em;
+        position: absolute;
+        top: -1000%;
+        width: 95%;
+        padding: 1em;
+        background-color: $dark;
+        transition: 1s top;
+      
+        @include-media(>="tablet"){
+            position: static;
+            display: flex;
+            flex-direction: row;
+            width: unset;
+            background-color: transparent;
+        }
+
+        &-element{
+            color: $white;
+            transition: color .6s;
+            @include-media(>="tablet") {
+            color: $dark;
+            }
+
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+
+    &__icon{
+        display: flex;
+        gap: 1em;
+        align-items: center;
+
+        &-btn{
+            padding: .5em 2em;
+            border-radius: 5px;
+            color: $white;
+            background-color: $primary;
+            transition: background-color .6s;
+
+            &:hover{
+                background-color: color(#ef9d97 shade(10%));
+            }
+        }
+
+        &-menu{
+           cursor: pointer;
+            @include-media(>="tablet"){
+                display: none;
+            }
+        }
+    }
+}
+
+.menu-visible {
+  top: 4em;
+}
+
+.smartwatch {
+  display: grid;
+  @include-media(>="tablet"){
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+    
+    &__image {
+      order: -1;
+    }
+
+    &__texts{
+      order: 1
+      @include-media(<="tablet") {
+        width: 90%
+      }
+      @include-media(>="tablet") {
+        order: -1;
+      }
+     
+        
+        &-title{
+            font-size: 5em;
+            @include-media(<="tablet") {
+                font-size: 3em;
+            }
+        }
+    
+        &-subtitle{
+            letter-spacing: 9px;
+            text-transform: uppercase;
+            color: $primary;
+        }
+    
+        &-text{
+            margin-block: 2em;
+            color: #777;
+        }
+    }
+}
+
+.smartwatch__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+}
+
+.smartwatch__card{
+    background-color: $white;
+    text-align: center;
+    margin-bottom: 2em;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    border-radius: 16px;
+    padding: 1em 2em;
+
+    &-subtitle{
+        letter-spacing: 3px;
+        color: $primary;
+    }
+}
